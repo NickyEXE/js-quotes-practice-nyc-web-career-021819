@@ -3,6 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', domLoadFunctions)
 
+// Blocks out the DOM load functions
 function domLoadFunctions(){
   const quoteUl = document.getElementById("quote-list")
   document.addEventListener('click', clickHandler)
@@ -103,9 +104,7 @@ function domLoadFunctions(){
   function deleteQuote(id){
     fetch(`http://localhost:3000/quotes/${id}`, {
         method: "DELETE",
-        headers: {
-            "Content-Type": "application/json"
-        }
+        headers: {"Content-Type": "application/json"}
         })
     .then(response => response.json())
     .then(fetchQuotes)
